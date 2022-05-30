@@ -49,6 +49,7 @@ const taxiQueue= TaxiQueue(taxiCount);
 counter2.innerHTML=taxiCount;
 
 taxiJoin.addEventListener("click", function(){
+    
     taxiQueue.joinTaxiQueue();
     counter2.innerHTML=taxiQueue.taxiQueueLength();
     localStorage.setItem("taxis", taxiQueue.taxiQueueLength());
@@ -61,6 +62,13 @@ taxiJoin.addEventListener("click", function(){
 
 
 taxiDepart.addEventListener("click", function(){
+    
+    taxiQueue.taxiDepart();
+    counter2.innerHTML=taxiQueue.taxiQueueLength();
+    localStorage.setItem("taxis", taxiQueue.taxiQueueLength());
 
+
+    
+        
 })
 
