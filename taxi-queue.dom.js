@@ -13,17 +13,45 @@ var taxiJoin=document.querySelector(".join_taxi_queue");
 var taxiDepart=document.querySelector(".depart");
 
 
+let passengerCount=0;
+const storePassengers=localStorage.getItem("passengers");
+if(storePassengers){
+    passengerCount=Number(storePassengers);
+}
+
+
+
 
 // DOM element references
 
 // create Factory Function instance
 
-//const taxiQueue = TaxiQueue();
+const peopleQueue = TaxiQueue(passengerCount);
+counter1.innerHTML=passengerCount;
 
 joinPassenger.addEventListener("click", function(){
-    alert("Hello Skillo!");
+    peopleQueue.joinQueue();
+    counter1.innerHTML=peopleQueue.queueLength();
+    localStorage.setItem("passengers", peopleQueue.joinQueue());
+    
 })
 
 
-// DOM events
+let taxiCount=0;
+const storeTaxis=localStorage.getItem("taxis");
+if(storeTaxis){
+    passengerCount=Number(storeTaxis);
+}
+
+
+const taxiQueue= TaxiQueue(taxiCount);
+counter2.innerHTML=taxiCount;
+
+taxiJoin.addEventListener("click", function(){
+    taxiQueue.joinTaxiQueue();
+    counter2.innerHTML=taxiQueue.taxiQueueLength();
+    localStorage.setItem("taxis", taxiQueue());
+
+
+})
 
