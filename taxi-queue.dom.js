@@ -20,12 +20,6 @@ if(storePassengers){
 }
 
 
-
-
-// DOM element references
-
-// create Factory Function instance
-
 const peopleQueue = TaxiQueue(passengerCount);
 counter1.innerHTML=passengerCount;
 
@@ -40,7 +34,7 @@ joinPassenger.addEventListener("click", function(){
 let taxiCount=0;
 const storeTaxis=localStorage.getItem("taxis");
 if(storeTaxis){
-    passengerCount=Number(storeTaxis);
+    taxiCount=Number(storeTaxis);
 }
 
 
@@ -50,7 +44,7 @@ counter2.innerHTML=taxiCount;
 taxiJoin.addEventListener("click", function(){
     taxiQueue.joinTaxiQueue();
     counter2.innerHTML=taxiQueue.taxiQueueLength();
-    localStorage.setItem("taxis", taxiQueue());
+    localStorage.setItem("taxis", taxiQueue.joinTaxiQueue());
 
 
 })
