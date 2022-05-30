@@ -26,7 +26,14 @@ counter1.innerHTML=passengerCount;
 joinPassenger.addEventListener("click", function(){
     peopleQueue.joinQueue();
     counter1.innerHTML=peopleQueue.queueLength();
-    localStorage.setItem("passengers", peopleQueue.joinQueue());
+    localStorage.setItem("passengers", peopleQueue.queueLength());
+    
+})
+
+leavePassenger.addEventListener("click", function(){
+    peopleQueue.leaveQueue();
+    counter1.innerHTML=peopleQueue.queueLength();
+    localStorage.setItem("passengers", peopleQueue.queueLength());
     
 })
 
@@ -44,8 +51,16 @@ counter2.innerHTML=taxiCount;
 taxiJoin.addEventListener("click", function(){
     taxiQueue.joinTaxiQueue();
     counter2.innerHTML=taxiQueue.taxiQueueLength();
-    localStorage.setItem("taxis", taxiQueue.joinTaxiQueue());
+    localStorage.setItem("taxis", taxiQueue.taxiQueueLength());
 
+
+})
+
+
+
+
+
+taxiDepart.addEventListener("click", function(){
 
 })
 
