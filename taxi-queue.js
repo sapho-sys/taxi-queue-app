@@ -44,8 +44,9 @@ function TaxiQueue() {
 	}
 
 	function taxiDepart(){
-		if(counter.length === 12){
-			return (counter2 - 12)
+		if(queueLength() >= 12 && taxiQueueLength() > 0){
+			counter -= 12;
+
 
 		}
 
