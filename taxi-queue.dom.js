@@ -66,6 +66,9 @@ taxiDepart.addEventListener("click", function(){
     taxiQueue.taxiDepart();
     counter2.innerHTML=taxiQueue.taxiQueueLength();
     localStorage.setItem("taxis", taxiQueue.taxiQueueLength());
+    counter1.innerHTML=peopleQueue.queueLength();
+    localStorage.setItem("passengers", peopleQueue.queueLength());
+    
 
 
     
